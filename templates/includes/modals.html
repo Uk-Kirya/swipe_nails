@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="offcanvas offcanvas-end" id="menu">
+    <picture data-bs-dismiss="offcanvas" class="close__button">
+        <img src="{% static 'img/close.svg' %}" alt="">
+    </picture>
+    <div class="offcanvas-body">
+        <ul>
+            <li {% if request.path == '/' %} class="active" {% endif %}>
+                <a href="{% url 'content:home' %}">Главная</a>
+            </li>
+            {% for page in pages %}
+                {% if page.place_1 %}
+                    <li {% if page.slug in request.path %} class="active" {% endif %}>
+                        <a href="{% url 'content:page' slug=page.slug %}">{{ page.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-top" id="search">
+    <picture data-bs-dismiss="offcanvas" class="close__button">
+        <img src="{% static 'img/close.svg' %}" alt="">
+    </picture>
+    <div class="offcanvas-body">
+        <b>Поиск по каталогу</b>
+        <form action="#" method="get" class="needs-validation" novalidate>
+            <input type="text" name="query" placeholder="Введите слово" class="form-control p-2" required>
+            <button type="submit">Искать</button>
+        </form>
+    </div>
+</div>

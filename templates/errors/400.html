@@ -1,0 +1,26 @@
+{% extends 'includes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+	Страница не найдена
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mt-5">
+                    <h1 class="display-1">404</h1>
+                    <p class="m-0">Запрашиваемая вами страница не найдена.</p>
+                    <p>Пожалуйста, вернитесь на главную и начните поиск заново.</p>
+                    <p>
+                        <a href="{% url 'content:home' %}" class="btn btn-outline-primary rounded-4 ps-4 pe-4">
+                            На главную
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

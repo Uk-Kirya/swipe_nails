@@ -1,0 +1,99 @@
+{% extends 'includes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Каталог — Swipe Nails
+{% endblock %}
+
+{% block keywords %}
+    {{ page.keywords }}
+{% endblock %}
+
+{% block description %}
+    {{ page.description }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container inner__header">
+            <div class="row">
+                <div class="col">
+                    <ul data-aos="fade-in" data-aos-delay="">
+                        <li><a href="{% url 'content:home' %}">Главная</a></li>
+                        <li>/</li>
+                        <li>Каталог</li>
+                    </ul>
+                    <h1 data-aos="fade-in" data-aos-delay="300">Каталог</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 categories__block">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-2" data-aos="zoom-in">
+                    <h2>Категории</h2>
+                </div>
+
+                {% for category in categories %}
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="{{ category.animation }}">
+                        <a href="{% url 'catalog:category' slug=category.slug %}">
+                            <div class="card__1 ratio ratio-1x1">
+                                <div>
+                                    <picture>
+                                        <img src="{{ category.icon.url }}" alt="">
+                                    </picture>
+                                    {{ category.title }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="container mt-5 categories__block">
+            <div class="row">
+                <div class="col-12 text-center mb-2" data-aos="zoom-in">
+                    <h2>Стили</h2>
+                </div>
+
+                {% for style in styles %}
+                    <div class="col-6 col-md-3 col-lg-4 mb-5" data-aos="fade-in" data-aos-delay="{{ style.animation }}">
+                        <div class="product">
+                            <div class="product__card">
+                                <div class="ratio ratio-4x3">
+                                    <div>
+                                        <a href="{% url 'catalog:style' slug=style.slug %}">
+                                            <picture style="opacity: 1;">
+                                                <img src="{{ style.cover.url }}" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="{% url 'catalog:style' slug=style.slug %}">
+                                        <h3>{{ style.title }}</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="container mt-3 categories__block">
+            <div class="row">
+                <div class="col-6 text-center mb-2" data-aos="zoom-in">
+                    <h2>Комбо-наборы</h2>
+                </div>
+                 <div class="col-6 text-center mb-2" data-aos="zoom-in">
+                    <h2>Аксессуары</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

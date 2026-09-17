@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Мой профиль</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="fav.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+    <div class="scroll-indicator" id="scrollIndicator">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header>
+        <div class="container-fluid" data-aos="fade-down">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <a href="index.html">
+                            <picture>
+                                <img src="img/logo.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="catalog.html">Каталог</a></li>
+                            <li><a href="company.html">О компании</a></li>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <picture data-bs-toggle="offcanvas" data-bs-target="#search">
+                            <img src="img/search.svg" alt="">
+                        </picture>
+                        <a href="profile.html">
+                            <picture>
+                                <img src="img/user.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="cart.html">
+                            <picture>
+                                <img src="img/cart.svg" alt="">
+                            </picture>
+                        </a>
+                        <picture data-bs-toggle="offcanvas" data-bs-target="#menu">
+                            <img src="img/menu.svg" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container inner__header">
+            <div class="row">
+                <div class="col">
+                    <ul data-aos="fade-in" data-aos-delay="">
+                        <li><a href="index.html">Главная</a></li>
+                        <li>/</li>
+                        <li>Мой профиль</li>
+                    </ul>
+                    <h1 data-aos="fade-in" data-aos-delay="300">Добро пожаловать, Кирилл!</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center" data-aos="fade-in" data-aos-delay="600">
+                <div class="col-lg-10">
+                    <ul class="nav nav-tabs profile__tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="profile.html">Мой профиль</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="orders.html">Мои заказы</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" href="index.html">Выход</a>
+                        </li>
+                    </ul>
+                    <form>
+                        <div class="row mb-5">
+                            <div class="col-8 col-lg-3">
+                                <div class="ratio ratio-1x1">
+                                    <div>
+                                        <picture class="profile__photo">
+                                            <img src="img/photo.jpg" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <img src="img/photo.png" alt="">
+                                </picture>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Выбрать другое фото</label>
+                                    <input class="form-control" type="file" id="formFile">
+                                </div>
+                            </div>
+                            <div class="col-lg-8 offset-lg-1">
+                                <div class="form-floating mt-2">
+                                    <input type="text" name="name" class="form-control" value="Кирилл" id="nameInput2" placeholder="Ваше имя" required>
+                                    <label for="nameInput2">Ваше имя</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="email" name="email" class="form-control" value="udarnik.kirill@gmail.com" id="emailInput2" placeholder="Ваш E-mail" required>
+                                    <label for="emailInput2">Ваш E-mail</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="text" name="phone" class="form-control phone__mask" value="+7 (747) 138-24-74" id="phoneInput2" placeholder="Ваш телефон" required>
+                                    <label for="phoneInput2">Ваш телефон</label>
+                                </div>
+                                <b class="form__zag">Адрес доставки</b>
+                                <div class="form-floating mt-2">
+                                    <input type="text" name="city" class="form-control" value="Алматы" id="city" placeholder="Город" required>
+                                    <label for="city">Город</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input type="text" name="address" class="form-control" value="ул. Айманова, 68, кв. 117" id="address" placeholder="Адрес" required>
+                                    <label for="address">Адрес</label>
+                                </div>
+                                <b class="form__zag">Коротко о себе</b>
+                                <div class="form-floating mt-3">
+                                    <textarea class="form-control" name="message" placeholder="Коротко о себе" id="messageTextarea2" style="height: 100px">Привет! Я Кирилл, и я разработчик данного сайта</textarea>
+                                    <label for="messageTextarea2">Коротко о себе</label>
+                                </div>
+                                <b class="form__zag">Доступ к профилю</b>
+                                <div class="form-floating mt-2">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Новый пароль">
+                                    <label for="password">Новый пароль</label>
+                                </div>
+                                <p class="form__text mt-2">Для сохранения предыдущего пароля, просто оставьте поле пустым</p>
+                                <button type="submit" class="send__button mt-4">Сохранить изменения</button>
+                                <button class="send__button__secondary mt-3">Удалить аккаунт</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-auto">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <b>Swipe Nails</b>
+                        <ul>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="company.html">О компании</a></li>
+                            <li><a href="career.html">Карьера</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <b>Поддержка</b>
+                        <ul>
+                            <li><a href="instructions.html">Инструкции</a></li>
+                            <li><a href="materials.html">Материалы</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="refund.html">Условия возврата</a></li>
+                            <li><a href="delivery.html">Доставка и оплата</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                        <b>Оплата</b>
+                        <ul>
+                            <li><picture><img src="img/visa.svg" alt=""></picture> — Visa</li>
+                            <li><picture><img src="img/mastercard.svg" alt=""></picture> — MasterCard</li>
+                            <li><picture><img src="img/gPay.svg" alt=""></picture> — Google Pay</li>
+                            <li><picture><img src="img/aPay.svg" alt=""></picture> — Apple Pay</li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                        <b>Мы в соц.сетях</b>
+                        <ul>
+                            <li><a href="#">Instagram <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">Facebook <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">TikTok <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">YouTube <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col cpy">
+                        <hr>
+                        <span>© 2026 Swipe Nails</span>
+                        <a href="policy.html">Политика конфиденциальности</a>
+                        <a href="offer.html">Оферта</a>
+                        <a href="https://losdesign.ru" target="_blank">Разработка и поддержка сайта</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" id="menu">
+        <picture data-bs-dismiss="offcanvas" class="close__button">
+            <img src="img/close.svg" alt="">
+        </picture>
+        <div class="offcanvas-body">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="company.html">О компании</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-top" id="search">
+        <picture data-bs-dismiss="offcanvas" class="close__button">
+            <img src="img/close.svg" alt="">
+        </picture>
+        <div class="offcanvas-body">
+            <b>Поиск по каталогу</b>
+            <form action="#" method="get" class="needs-validation" novalidate>
+                <input type="text" name="query" placeholder="Введите слово" class="form-control p-2" required>
+                <button type="submit">Искать</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/owl.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <!-- Скрипты -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/aos.js"></script>
+
+</body>
+
+</html>

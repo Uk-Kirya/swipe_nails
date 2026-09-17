@@ -1,0 +1,73 @@
+{% load static %}
+
+<footer class="mt-auto">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <b>Swipe Nails</b>
+                    <ul>
+                        {% for page in pages %}
+                            {% if page.place_2 %}
+                                <li {% if page.slug in request.path %} class="active" {% endif %}>
+                                    <a href="{% url 'content:page' slug=page.slug %}">{{ page.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <b>Поддержка</b>
+                    <ul>
+                        {% for page in pages %}
+                            {% if page.place_3 %}
+                                <li {% if page.slug in request.path %} class="active" {% endif %}>
+                                    <a href="{% url 'content:page' slug=page.slug %}">{{ page.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                    <b>Оплата</b>
+                    <ul>
+                        {% for payment_method in payment_methods %}
+                            <li>
+                                <picture>
+                                    <img src="{{ payment_method.icon.url }}" alt="">
+                                </picture> — {{ payment_method.title }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                    <b>Мы в соц.сетях</b>
+                    <ul>
+                        {% for social in socials %}
+                            <li>
+                                <a href="{{ social.link }}" target="_blank">
+                                    {{ social.title }}
+                                    <picture>
+                                        <img src="{% static 'img/arrow.svg' %}" alt="">
+                                    </picture>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col cpy">
+                    <hr>
+                    <span>© {% now 'Y' %} Swipe Nails</span>
+                    {% for page in pages %}
+                        {% if page.place_4 %}
+                            <a href="{% url 'content:page' slug=page.slug %}">{{ page.title }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="https://losdesign.ru" target="_blank">Разработка и поддержка сайта</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

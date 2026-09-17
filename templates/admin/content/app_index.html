@@ -1,0 +1,117 @@
+{% extends "admin/base_site.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="custom-admin-dashboard">
+
+        <div class="module">
+            <div class="dashboard-links">
+                <div class="dashboard-item">
+                    <h1 style="margin: 0; font-size: 2rem;">📝 Контент</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="dashboard-links">
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/vacancy/">Вакансии ({% firstof vacancies_count '0' %})</a></h3>
+                    <p>Управление вакансиями</p>
+                    <a href="/admin/content/vacancy/" class="button">Все вакансии</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/contact/">Контакты ({% firstof contacts_count '0' %})</a></h3>
+                    <p>Управление контактами</p>
+                    <a href="/admin/content/contact/" class="button">Все контакты</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/paymentmethods/">Методы оплаты ({% firstof payments_count '0' %})</a></h3>
+                    <p>Управление методами оплаты</p>
+                    <a href="/admin/content/paymentmethods/" class="button">Все методы оплаты</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/abouthome/1/change/">О компании на главной</a></h3>
+                    <p>Текст о компании на главной</p>
+                    <a href="/admin/content/abouthome/1/change/" class="button">Изменить</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/review/">Отзывы ({% firstof reviews_count '0' %})</a></h3>
+                    <p>Управление отзывами</p>
+                    <a href="/admin/content/review/" class="button">Все отзывы</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/benefit/">Преимущества ({% firstof benefits_count '0' %})</a></h3>
+                    <p>Управление преимуществами</p>
+                    <a href="/admin/content/benefit/" class="button">Все преимущества</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/slider/">Слайдер ({% firstof sliders_count '0' %})</a></h3>
+                    <p>Управление слайдером</p>
+                    <a href="/admin/content/slider/" class="button">Все слайды</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/socialnetwork/">Соц.сети ({% firstof socials_count '0' %})</a></h3>
+                    <p>Управление соц.сетями</p>
+                    <a href="/admin/content/socialnetwork/" class="button">Все соц.сети</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><a href="/admin/content/page/">Страницы ({% firstof pages_count '0' %})</a></h3>
+                    <p>Управление страницами</p>
+                    <a href="/admin/content/page/" class="button">Все страницы</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        .custom-admin-dashboard {
+            margin-bottom: 20px;
+        }
+        .dashboard-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(370px, 2fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .dashboard-item {
+            background: var(--darkened-bg);
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #417690;
+        }
+        .dashboard-item h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+        .dashboard-item a {
+            text-decoration: none !important;
+            color: #417690;
+        }
+        .dashboard-item a:hover {
+            color: #264b5d;
+        }
+        .colM > h1 {
+            display: none;
+        }
+        .dashboard-item p {
+            margin: 0;
+        }
+        .button {
+            display: inline-flex;
+            margin: .5rem 0 0 .5rem;
+            background-color: #417690;
+            border: 0;
+            color: #fff !important;
+            padding: .5rem .75rem !important;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: .75rem;
+            transition: .3s all;
+        }
+        .button:hover {
+            background-color: #264b5d;
+        }
+    </style>
+{% endblock %}

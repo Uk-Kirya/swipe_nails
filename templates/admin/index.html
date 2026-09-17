@@ -1,0 +1,61 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="custom-admin-dashboard">
+    <!-- Ваша кастомная панель -->
+    <div class="module">
+        <div class="dashboard-links">
+            <div class="dashboard-item">
+                <h1 style="margin: 0; font-size: 2rem;">👋 Добро пожаловать, {{ user.get_full_name }}!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="module">
+        <div class="dashboard-links">
+            <div class="dashboard-item">
+                <h3><a href="#">📝 Страницы ({{ pages_count }})</a></h3>
+                <p>Управление страницами сайта</p>
+            </div>
+            <div class="dashboard-item">
+                <h3><a href="#">🌐 Страницы ({{ pages_count }})</a></h3>
+                <p>Редактирование страниц сайта</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.custom-admin-dashboard {
+    margin-bottom: 20px;
+}
+.dashboard-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.dashboard-item {
+    background: var(--darkened-bg);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #417690;
+}
+.dashboard-item h3 {
+    margin-top: 0;
+}
+.dashboard-item a {
+    text-decoration: none;
+    color: #417690;
+}
+.dashboard-item a:hover {
+    color: #264b5d;
+}
+.colM > h1 {
+    display: none;
+}
+.dashboard-item p {
+    margin: 0;
+}
+</style>
+{% endblock %}

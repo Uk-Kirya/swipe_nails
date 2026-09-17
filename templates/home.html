@@ -1,0 +1,321 @@
+{% extends 'includes/base.html' %}
+
+{% load static %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Главная — Steppe Intelligence
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="owl-carousel owl-theme slider" data-aos="fade-in">
+            {% for slide in slider %}
+                <div class="item">
+                    <div>
+                        {% if slide.title %}
+                            <h1>{{ slide }}</h1>
+                        {% endif %}
+
+                        {% if slide.text %}
+                            <p>{{ slide.text }}</p>
+                        {% endif %}
+
+                        {% if slide.link_on_button %}
+                            <button onclick="window.location.href='{{ slide.link_on_button }}'">
+                                {{ slide.text_on_button }}
+                            </button>
+                        {% endif %}
+                    </div>
+                    <picture>
+                        <img src="{{ slide.image.url }}" alt="">
+                    </picture>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="container mt-5 categories__block">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-2" data-aos="zoom-in">
+                    <h2>Категории</h2>
+                </div>
+                {% for category in categories %}
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="{{ category.animation }}">
+                        <a href="{% url 'catalog:category' slug=category.slug %}">
+                            <div class="card__1 ratio ratio-1x1">
+                                <div>
+                                    <picture>
+                                        <img src="{{ category.icon.url }}" alt="">
+                                    </picture>
+                                    {{ category.title }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Популярные</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+
+                        {% for product in products %}
+                            {% if product.popular %}
+                                <div class="item product">
+                                    <div class="product__card">
+                                        <div class="ratio ratio-3x4">
+                                            <div>
+                                                <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                    <div class="tags">
+                                                        {% if product.in_stock %}
+                                                            <span class="hit">Хит продаж</span>
+                                                            {% if product.new %}
+                                                                <span class="new">Новинка</span>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <span class="none">Нет в наличии</span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <picture>
+                                                        <img src="{{ product.cover_1.url }}" alt="">
+                                                    </picture>
+                                                    <picture>
+                                                        <img src="{{ product.cover_2.url }}" alt="">
+                                                    </picture>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product__card__text">
+                                            <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                <h3>{{ product.title }}</h3>
+                                            </a>
+                                            <p>{{ product.category | upper }}</p>
+                                            <p>{{ product.price | price }} ₸</p>
+                                        </div>
+                                    </div>
+                                    {% if product.in_stock %}
+                                        <form>
+                                            <button class="to__cart">
+                                                В корзину
+                                                <picture>
+                                                    <img src="{% static 'img/cart_white.svg' %}" alt="">
+                                                </picture>
+                                            </button>
+                                        </form>
+                                    {% else %}
+                                        <button class="to__cart to__cart__none">
+                                            Сообщить о поступлении
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Новинки</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+
+                        {% for product in products %}
+                            {% if product.new %}
+                                <div class="item product">
+                                    <div class="product__card">
+                                        <div class="ratio ratio-3x4">
+                                            <div>
+                                                <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                    <div class="tags">
+                                                        {% if product.in_stock %}
+                                                            {% if product.popular %}
+                                                                <span class="hit">Хит продаж</span>
+                                                            {% endif %}
+                                                            <span class="new">Новинка</span>
+                                                        {% else %}
+                                                            <span class="none">Нет в наличии</span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <picture>
+                                                        <img src="{{ product.cover_1.url }}" alt="">
+                                                    </picture>
+                                                    <picture>
+                                                        <img src="{{ product.cover_2.url }}" alt="">
+                                                    </picture>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product__card__text">
+                                            <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                <h3>{{ product.title }}</h3>
+                                            </a>
+                                            <p>{{ product.category | upper }}</p>
+                                            <p>{{ product.price | price }} ₸</p>
+                                        </div>
+                                    </div>
+                                    {% if product.in_stock %}
+                                        <form>
+                                            <button class="to__cart">
+                                                В корзину
+                                                <picture>
+                                                    <img src="{% static 'img/cart_white.svg' %}" alt="">
+                                                </picture>
+                                            </button>
+                                        </form>
+                                    {% else %}
+                                        <button class="to__cart to__cart__none">
+                                            Сообщить о поступлении
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4 video__block">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__2">
+
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Загрузка видео ...
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="#">
+                                                <picture>
+                                                    <img src="{% static 'img/product_1.webp' %}" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="{% static 'img/product_2.webp' %}" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="#"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Комбо-наборы</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+
+                        {% for product in products %}
+                            {% if product.type == 'combo' %}
+                                <div class="item product">
+                                    <div class="product__card">
+                                        <div class="ratio ratio-3x4">
+                                            <div>
+                                                <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                    <div class="tags">
+                                                        {% if product.in_stock %}
+                                                            {% if product.popular %}
+                                                                <span class="hit">Хит продаж</span>
+                                                            {% endif %}
+                                                            {% if product.new %}
+                                                                <span class="new">Новинка</span>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <span class="none">Нет в наличии</span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <picture>
+                                                        <img src="{{ product.cover_1.url }}" alt="">
+                                                    </picture>
+                                                    <picture>
+                                                        <img src="{{ product.cover_2.url }}" alt="">
+                                                    </picture>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product__card__text">
+                                            <a href="{% url 'catalog:product' slug=product.slug %}">
+                                                <h3>{{ product.title }}</h3>
+                                            </a>
+                                            <p>{{ product.price | price }} ₸</p>
+                                        </div>
+                                    </div>
+                                    <form>
+                                        <button class="to__cart">
+                                            В корзину
+                                            <picture>
+                                                <img src="{% static 'img/cart_white.svg' %}" alt="">
+                                            </picture>
+                                        </button>
+                                    </form>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 pt-4 about__block">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-2 order-lg-1 mt-4 mt-lg-0">
+                    <h2 data-aos="fade-in" data-aos-delay="">{{ about.title }}</h2>
+                    <p data-aos="fade-in" data-aos-delay="200">{{ about.text | safe }}</p>
+                    <a href="{% url 'content:page' slug='about' %}" data-aos="fade-in" data-aos-delay="400">Познакомиться ближе</a>
+                </div>
+                <div class="col-lg-6 offset-lg-1 order-1 order-lg-2">
+                    <div class="ratio ratio-16x9" data-aos="fade-in" data-aos-delay="600">
+                        <div>
+                            <picture>
+                                <img src="{{ about.image.url }}" alt="">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5 benefits__block">
+            <div class="row">
+                {% for benefit in benefits %}
+                    <div class="col-6 col-md-4 col-lg-3" data-aos="fade-in" data-aos-delay="{{ benefit.animation }}">
+                        <div class="card__2">
+                            <picture>
+                                <img src="{{ benefit.icon.url }}" alt="">
+                            </picture>
+                            {{ benefit.title }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

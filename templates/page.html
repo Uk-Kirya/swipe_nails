@@ -1,0 +1,252 @@
+{% extends 'includes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ page.title }} — Swipe Nails
+{% endblock %}
+
+{% block keywords %}
+    {{ page.keywords }}
+{% endblock %}
+
+{% block description %}
+    {{ page.description }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container inner__header">
+            <div class="row">
+                <div class="col">
+                    <ul data-aos="fade-in" data-aos-delay="">
+                        <li><a href="{% url 'content:home' %}">Главная</a></li>
+                        <li>/</li>
+                        <li>{{ page.title }}</li>
+                    </ul>
+                    <h1 data-aos="fade-in" data-aos-delay="300">{{ page.title }}</h1>
+                </div>
+            </div>
+        </div>
+
+        {% if page.type == 'text' %}
+            <div class="container">
+                <div class="row" data-aos="fade-in" data-aos-delay="600">
+                    <div class="col">
+                        {{ page.text_1 | safe }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'about' %}
+            <div class="container mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 about__block">
+
+                        <div class="row align-items-center" data-aos="fade-in">
+                            <div class="col-lg-6 order-1">
+                                {{ page.text_1 | safe }}
+                            </div>
+                            <div class="col-lg-6 order-2">
+                                {% if page.image_1 %}
+                                    <picture>
+                                        <img src="{{ page.image_1.url }}" alt="">
+                                    </picture>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center" data-aos="fade-in">
+                            <div class="col-lg-6 order-lg-2 order-1">
+                                {% if page.image_2 %}
+                                    <picture>
+                                        <img src="{{ page.image_2.url }}" alt="">
+                                    </picture>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-6 order-lg-2 order-1">
+                                {{ page.text_2 | safe }}
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center" data-aos="fade-in">
+                            <div class="col-lg-6 order-1">
+                                {{ page.text_3 | safe }}
+                            </div>
+                            <div class="col-lg-6 order-2">
+                                {% if page.image_3 %}
+                                    <picture>
+                                        <img src="{{ page.image_3.url }}" alt="">
+                                    </picture>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'reviews' %}
+            <div class="container">
+                <div class="row justify-content-center" data-aos="fade-in" data-aos-delay="600">
+                    <div class="col-lg-10">
+                        {% if reviews %}
+                            <div class="text__reviews">
+                                {% for review in reviews %}
+                                    <div>
+                                        <i>{{ review.published_at }}</i>
+                                        <picture>
+                                            {% if review.photo_client %}
+                                                <img src="{{ review.photo_client.url }}" alt="">
+                                            {% else %}
+                                                <img src="{% static 'img/user.svg' %}" alt="">
+                                            {% endif %}
+                                        </picture>
+                                        <b>{{ review.name }}</b>
+                                        {{ review.review | safe }}
+                                        {% if review.photo_review %}
+                                            <picture class="photo__review" data-src="{{ review.photo_review.url }}" data-fancybox="photo__review">
+                                                <img src="{{ review.photo_review.url }}" alt="">
+                                            </picture>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p class="w-100 text-center mb-5">Отзывов пока нет ...</p>
+                        {% endif %}
+                        <button class="send__review">
+                            <picture>
+                                <img src="{% static 'img/send_review.svg' %}" alt="">
+                            </picture>
+                            Оставить отзыв
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'contacts' %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 contacts__block">
+                        <ul>
+                            {% for contact in contacts %}
+                                <li data-aos="fade-in" data-aos-delay="">
+                                    <picture>
+                                        <img src="{{ contact.icon.url }}" alt="">
+                                    </picture>
+                                    <span>{{ contact.title }}</span>
+                                    {{ contact.text }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <form action="#" method="post" class="needs-validation" novalidate data-aos="fade-in" data-aos-delay="600">
+                            <b>Пишите нам</b>
+                            <div class="form-floating">
+                                <input type="text" name="name" class="form-control" id="nameInput2" placeholder="Ваше имя" required>
+                                <label for="nameInput2">Ваше имя</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" name="email" class="form-control" id="emailInput2" placeholder="Ваш E-mail">
+                                <label for="emailInput2">Ваш E-mail</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="phone" class="form-control phone__mask" id="phoneInput2" placeholder="Ваш телефон" required>
+                                <label for="phoneInput2">Ваш телефон</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" name="message" placeholder="Ваше сообщение" id="messageTextarea2" style="height: 100px"></textarea>
+                                <label for="messageTextarea2">Ваше сообщение</label>
+                            </div>
+                            <p class="form__text">Отправляя данное сообщение, вы соглашаетесь с нашей <a href="{% url 'content:page' slug='policy' %}">политикой обработки персональных данных</a></p>
+                            <button type="submit" class="send__button">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'career' %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center" data-aos="fade-in" data-bs-delay="">
+                        {{ page.text_1 | safe }}
+                    </div>
+                    <div class="col-lg-7 mt-4" data-aos="fade-in" data-bs-delay="300">
+                        <div class="questions__block">
+                            {% for vacancy in vacancies %}
+                                <div class="accordion-item">
+                                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#q_{{ vacancy.id }}">
+                                        {{ vacancy.title }}
+                                        <picture>
+                                            <img src="{% static 'img/arow.svg' %}" alt="">
+                                        </picture>
+                                    </button>
+                                    <div id="q_{{ vacancy.id }}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            {{ vacancy.text | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'faq' %}
+            <div class="container mb-5">
+                <div class="row justify-content-center" data-aos="fade-in" data-aos-delay="600">
+                    <div class="col-lg-7 text-center">
+                        {{ page.text_1 | safe }}
+                    </div>
+                    <div class="col-lg-7">
+                        <ul class="nav faq__block">
+                            {% for category in faq_categories %}
+                                <li class="nav-item">
+                                    <button {% if forloop.first %} class="active" {% endif %} data-bs-toggle="pill" data-bs-target="#tab_{{ category.id }}">
+                                        {% if category.icon %}
+                                            <picture>
+                                                <img src="{{ category.icon.url }}" alt="">
+                                            </picture>
+                                        {% endif %}
+                                        {{ category.title }}
+                                    </button>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="tab-content">
+                            {% for category in faq_categories %}
+                                <div class="tab-pane fade {% if forloop.first %} show active {% endif %}" id="tab_{{ category.id }}">
+                                    <div class="questions__block">
+                                        {% for question in category.questions.all %}
+                                            <div class="accordion-item">
+                                                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#q_{{ question.id }}">
+                                                    {{ question.title }}
+                                                    <picture>
+                                                        <img src="{% static 'img/arow.svg' %}" alt="">
+                                                    </picture>
+                                                </button>
+                                                <div id="q_{{ question.id }}" class="accordion-collapse collapse">
+                                                    <div class="accordion-body">
+                                                        {{ question.text | safe }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% empty %}
+                                            <p class="text-center w-100">Вопросов-ответов пока нет ...</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </main>
+{% endblock %}

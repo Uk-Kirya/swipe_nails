@@ -1,0 +1,53 @@
+{% load static %}
+
+<div class="scroll-indicator" id="scrollIndicator">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<header>
+    <div class="container-fluid" data-aos="fade-down">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <a href="{% url 'content:home' %}">
+                        <picture>
+                            <img src="{% static 'img/logo.svg' %}" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div>
+                    <ul>
+                        <li {% if request.path == '/' %} class="active" {% endif %}>
+                            <a href="{% url 'content:home' %}">Главная</a>
+                        </li>
+                        {% for page in pages %}
+                            {% if page.place_1 %}
+                                <li {% if page.slug in request.path %} class="active" {% endif %}>
+                                    <a href="{% url 'content:page' slug=page.slug %}">{{ page.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div>
+                    <picture data-bs-toggle="offcanvas" data-bs-target="#search">
+                        <img src="{% static 'img/search.svg' %}" alt="">
+                    </picture>
+                    <a href="profile.html">
+                        <picture>
+                            <img src="{% static 'img/user.svg' %}" alt="">
+                        </picture>
+                    </a>
+                    <a href="cart.html">
+                        <picture>
+                            <img src="{% static 'img/cart.svg' %}" alt="">
+                        </picture>
+                    </a>
+                    <picture data-bs-toggle="offcanvas" data-bs-target="#menu">
+                        <img src="{% static 'img/menu.svg' %}" alt="">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

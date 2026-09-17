@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Главная</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="fav.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+    <div class="scroll-indicator" id="scrollIndicator">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header>
+        <div class="container-fluid" data-aos="fade-down">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <a href="index.html">
+                            <picture>
+                                <img src="img/logo.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="active"><a href="index.html">Главная</a></li>
+                            <li><a href="catalog.html">Каталог</a></li>
+                            <li><a href="company.html">О компании</a></li>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <picture data-bs-toggle="offcanvas" data-bs-target="#search">
+                            <img src="img/search.svg" alt="">
+                        </picture>
+                        <a href="profile.html">
+                            <picture>
+                                <img src="img/user.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="cart.html">
+                            <picture>
+                                <img src="img/cart.svg" alt="">
+                            </picture>
+                        </a>
+                        <picture data-bs-toggle="offcanvas" data-bs-target="#menu">
+                            <img src="img/menu.svg" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="owl-carousel owl-theme slider" data-aos="fade-in">
+            <div class="item">
+                <div>
+                    <h1>Название слайда</h1>
+                    <form>
+                        <button>Купить сейчас</button>
+                    </form>
+                </div>
+                <picture>
+                    <img src="img/banner.webp" alt="">
+                </picture>
+            </div>
+            <div class="item">
+                <div>
+                    <h1>Название слайда</h1>
+                    <form>
+                        <button>Купить сейчас</button>
+                    </form>
+                </div>
+                <picture>
+                    <img src="img/banner.webp" alt="">
+                </picture>
+            </div>
+        </div>
+
+        <div class="container mt-5 categories__block">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-2" data-aos="zoom-in">
+                    <h2>Категории</h2>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="">
+                    <a href="category.html">
+                        <div class="card__1 ratio ratio-1x1">
+                            <div>
+                                <picture>
+                                    <img src="img/square.svg" alt="">
+                                </picture>
+                                Квадрат
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="200">
+                    <a href="category.html">
+                        <div class="card__1 ratio ratio-1x1">
+                            <div>
+                                <picture>
+                                    <img src="img/almond.svg" alt="">
+                                </picture>
+                                Миндальный
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="400">
+                    <a href="category.html">
+                        <div class="card__1 ratio ratio-1x1">
+                            <div>
+                                <picture>
+                                    <img src="img/balerina.svg" alt="">
+                                </picture>
+                                Балерина
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="fade-in" data-aos-delay="600">
+                    <a href="category.html">
+                        <div class="card__1 ratio ratio-1x1">
+                            <div>
+                                <picture>
+                                    <img src="img/oval.svg" alt="">
+                                </picture>
+                                Овал
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Популярные</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="hit">Хит продаж</span>
+                                                <span class="new">Новинка</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="none">Нет в наличии</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart to__cart__none">
+                                    Сообщить о поступлении
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Новинки</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="hit">Хит продаж</span>
+                                                <span class="new">Новинка</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="none">Нет в наличии</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart to__cart__none">
+                                    Сообщить о поступлении
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>Видео-отзывы</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Видео
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="product.html">
+                                                <picture>
+                                                    <img src="img/product_1.webp" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="img/product_2.webp" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="product.html"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Видео
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="product.html">
+                                                <picture>
+                                                    <img src="img/product_1.webp" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="img/product_2.webp" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="product.html"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Видео
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="product.html">
+                                                <picture>
+                                                    <img src="img/product_1.webp" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="img/product_2.webp" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="product.html"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Видео
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="product.html">
+                                                <picture>
+                                                    <img src="img/product_1.webp" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="img/product_2.webp" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="product.html"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4 video__review">
+                                    <div>
+                                        Видео
+                                    </div>
+                                </div>
+                                <div class="video__product">
+                                    <div class="ratio ratio-3x4">
+                                        <div>
+                                            <a href="product.html">
+                                                <picture>
+                                                    <img src="img/product_1.webp" alt="">
+                                                </picture>
+                                                <picture>
+                                                    <img src="img/product_2.webp" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="product.html"><h3>Peach Please</h3></a>
+                                        <p>ALMOND</p>
+                                        <p>5 389 ₸</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <div class="col-12 text-center mb-4" data-aos="zoom-in">
+                    <h2>Комбо-наборы</h2>
+                </div>
+                <div class="col-12" data-aos="fade-up">
+                    <div class="owl-carousel owl-theme carousel__1">
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="hit">Хит продаж</span>
+                                                <span class="new">Новинка</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <div class="tags">
+                                                <span class="none">Нет в наличии</span>
+                                            </div>
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart to__cart__none">
+                                    Сообщить о поступлении
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="item product">
+                            <div class="product__card">
+                                <div class="ratio ratio-3x4">
+                                    <div>
+                                        <a href="product.html">
+                                            <picture>
+                                                <img src="img/product_1.webp" alt="">
+                                            </picture>
+                                            <picture>
+                                                <img src="img/product_2.webp" alt="">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product__card__text">
+                                    <a href="product.html"><h3>Peach Please</h3></a>
+                                    <p>ALMOND</p>
+                                    <p>5 389 ₸</p>
+                                </div>
+                            </div>
+                            <form>
+                                <button class="to__cart">
+                                    В корзину
+                                    <picture>
+                                        <img src="img/cart_white.svg" alt="">
+                                    </picture>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 pt-4 about__block">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-2 order-lg-1 mt-4 mt-lg-0">
+                    <h2 data-aos="fade-in" data-aos-delay="">О компании</h2>
+                    <p data-aos="fade-in" data-aos-delay="200">Switch Nails skapades med målet att erbjuda alla vackra naglar på några minuter, med salongs-resultat. Vi
+                        strävar efter att skapa de vackraste och mest eftertraktade produkterna, med minsta möjliga påverkan på vår
+                        planet, med fokus på återvunna och veganska material.
+                    </p>
+                    <a href="company.html" data-aos="fade-in" data-aos-delay="400">Познакомиться ближе</a>
+                </div>
+                <div class="col-lg-6 offset-lg-1 order-1 order-lg-2">
+                    <div class="ratio ratio-16x9" data-aos="fade-in" data-aos-delay="600">
+                        <div>
+                            <picture>
+                                <img src="img/banner.webp" alt="">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5 benefits__block">
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-in" data-aos-delay="">
+                    <div class="card__2">
+                        <picture>
+                            <img src="img/clients.svg" alt="">
+                        </picture>
+                        >100 000 довольных клиентов
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-in" data-aos-delay="200">
+                    <div class="card__2">
+                        <picture>
+                            <img src="img/like.svg" alt="">
+                        </picture>
+                        >1 000 положительных отзывов
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-in" data-aos-delay="400">
+                    <div class="card__2">
+                        <picture>
+                            <img src="img/premium.svg" alt="">
+                        </picture>
+                        Только премиум материал
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-in" data-aos-delay="600">
+                    <div class="card__2">
+                        <picture>
+                            <img src="img/support.svg" alt="">
+                        </picture>
+                        Профессиональная консультация
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <b>Swipe Nails</b>
+                        <ul>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="company.html">О компании</a></li>
+                            <li><a href="career.html">Карьера</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <b>Поддержка</b>
+                        <ul>
+                            <li><a href="instructions.html">Инструкции</a></li>
+                            <li><a href="materials.html">Материалы</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="refund.html">Условия возврата</a></li>
+                            <li><a href="delivery.html">Доставка и оплата</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                        <b>Оплата</b>
+                        <ul>
+                            <li><picture><img src="img/visa.svg" alt=""></picture> — Visa</li>
+                            <li><picture><img src="img/mastercard.svg" alt=""></picture> — MasterCard</li>
+                            <li><picture><img src="img/gPay.svg" alt=""></picture> — Google Pay</li>
+                            <li><picture><img src="img/aPay.svg" alt=""></picture> — Apple Pay</li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-3 mt-5 mt-lg-0">
+                        <b>Мы в соц.сетях</b>
+                        <ul>
+                            <li><a href="#">Instagram <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">Facebook <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">TikTok <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                            <li><a href="#">YouTube <picture><img src="img/arrow.svg" alt=""></picture></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col cpy">
+                        <hr>
+                        <span>© 2026 Swipe Nails</span>
+                        <a href="policy.html">Политика конфиденциальности</a>
+                        <a href="offer.html">Оферта</a>
+                        <a href="https://losdesign.ru" target="_blank">Разработка и поддержка сайта</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" id="menu">
+        <picture data-bs-dismiss="offcanvas" class="close__button">
+            <img src="img/close.svg" alt="">
+        </picture>
+        <div class="offcanvas-body">
+            <ul>
+                <li class="active"><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="company.html">О компании</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-top" id="search">
+        <picture data-bs-dismiss="offcanvas" class="close__button">
+            <img src="img/close.svg" alt="">
+        </picture>
+        <div class="offcanvas-body">
+            <b>Поиск по каталогу</b>
+            <form action="#" method="get" class="needs-validation" novalidate>
+                <input type="text" name="query" placeholder="Введите слово" class="form-control p-2" required>
+                <button type="submit">Искать</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/owl.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <!-- Скрипты -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/aos.js"></script>
+
+</body>
+
+</html>
