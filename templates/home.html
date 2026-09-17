@@ -14,6 +14,7 @@
             {% for slide in slider %}
                 <div class="item">
                     <div>
+                    
                         {% if slide.title %}
                             <h1>{{ slide }}</h1>
                         {% endif %}
@@ -27,6 +28,7 @@
                                 {{ slide.text_on_button }}
                             </button>
                         {% endif %}
+                    
                     </div>
                     <picture>
                         <img src="{{ slide.image.url }}" alt="">
