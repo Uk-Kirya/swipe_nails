@@ -100,6 +100,7 @@ INSTALLED_APPS = [
     'content',
     'faq',
     'catalog',
+    'instructions',
     'ckeditor',
     'ckeditor_uploader',
 ]

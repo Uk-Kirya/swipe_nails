@@ -6,6 +6,7 @@ from django.http import HttpRequest
 from content.models import Page, SocialNetwork, PaymentMethods, Vacancy, Contact, Review, Benefit, Slider
 from catalog.models import Category, Style, Color, Product, AccessoriesCategory, Video
 from faq.models import CategoryFaq, QuestionFaq
+from instructions.models import InstructionCard, QuestionInstruction, ExpertAdvice
 
 
 def context_all(request: HttpRequest) -> dict[str, Any]:
@@ -40,5 +41,8 @@ def admin_stats(request):
             'socials_count': SocialNetwork.objects.count(),
             'groups_count': Group.objects.count(),
             'users_count': User.objects.count(),
+            'instructioncards_count': InstructionCard.objects.count(),
+            'questioninstructions_count': QuestionInstruction.objects.count(),
+            'expertadvices_count': ExpertAdvice.objects.count(),
         }
     return {}

@@ -65,6 +65,8 @@ class Page(models.Model):
         ('contacts', 'Контакты'),
         ('career', 'Карьера'),
         ('faq', 'FAQ'),
+        ('instructions', 'Инструкции'),
+        ('materials', 'Материалы'),
     ]
 
     title = models.CharField(max_length=500, blank=False, verbose_name='Заголовок')

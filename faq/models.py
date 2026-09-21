@@ -40,6 +40,8 @@ class CategoryFaq(models.Model):
                 except CategoryFaq.DoesNotExist:
                     pass
 
+        super().save(*args, **kwargs)
+
 
 class QuestionFaq(models.Model):
     class Meta:

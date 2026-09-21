@@ -16,6 +16,7 @@ from django.contrib import messages
 from catalog.models import Category, Product
 from content.models import Page, Contact, Vacancy, Review, Benefit, AboutHome, Slider
 from faq.models import CategoryFaq, QuestionFaq
+from instructions.models import InstructionCard, QuestionInstruction, ExpertAdvice
 
 
 class HomePage(View):
@@ -52,6 +53,11 @@ class PageView(View):
 
         if page.type == 'reviews':
             context['reviews'] = Review.objects.all().order_by('published_at')
+
+        if page.type == 'instructions':
+            context['cards'] = InstructionCard.objects.all().order_by('order')
+            context['questions'] = QuestionInstruction.objects.all().order_by('order')
+            context['advices'] = ExpertAdvice.objects.all().order_by('order')
 
         return render(request, 'page.html', context=context)
 

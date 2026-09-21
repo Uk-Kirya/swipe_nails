@@ -114,14 +114,16 @@
                                 {% endfor %}
                             </div>
                         {% else %}
-                            <p class="w-100 text-center mb-5">Отзывов пока нет ...</p>
+                            <p class="w-100 text-center mb-5">Мы собираем отзывы и совсем скоро опубликуем их ...</p>
                         {% endif %}
+                        <!--
                         <button class="send__review">
                             <picture>
                                 <img src="{% static 'img/send_review.svg' %}" alt="">
                             </picture>
                             Оставить отзыв
                         </button>
+                        -->
                     </div>
                 </div>
             </div>
@@ -243,6 +245,120 @@
                                 </div>
                             {% endfor %}
                         </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'instructions' %}
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        {{ page.text_1 | safe }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="ratio-21x9 ratio video__block__instructions">
+                            <div>
+                                <iframe src="https://www.youtube.com/embed/Si4cniuMldw?si=hcNsssL2l8l3MIBZ" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for card in cards %}
+                        <div class="col-md-6 col-lg-4" data-aos="fade-in" data-aos-delay="{{ card.order }}00">
+                            <div class="card__instruction">
+                                <img src="{{ card.image.url }}" alt="">
+                                <div>
+                                    {{ card.text_1 | safe }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row advices__block">
+                    <div class="col-12 text-center">
+                        <h3>Советы от эксперта</h3>
+                    </div>
+                    {% for advice in advices %}
+                        {% if advice.block == 'block_1' %}
+                            <div class="col-md-6 col-lg-4" data-aos="fade-in" data-aos-delay="{{ card.order }}00">
+                                <div class="advice__card">
+                                    {{ advice.text | safe }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="row mistakes__block">
+                    <div class="col-12 text-center">
+                        <h3>Наиболее распространенные ошибки</h3>
+                    </div>
+                    {% for advice in advices %}
+                        {% if advice.block == 'mistakes' %}
+                            <div class="col-md-6 col-lg-4" data-aos="fade-in" data-aos-delay="{{ card.order }}00">
+                                <div class="advice__card">
+                                    {{ advice.text | safe }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        {{ page.text_2 | safe }}
+                    </div>
+                </div>
+                <div class="row advices__block">
+                    <div class="col-12 text-center">
+                        <h3>Советы от эксперта</h3>
+                    </div>
+                    {% for advice in advices %}
+                        {% if advice.block == 'block_2' %}
+                            <div class="col-md-6 col-lg-4" data-aos="fade-in" data-aos-delay="{{ card.order }}00">
+                                <div class="advice__card">
+                                    {{ advice.text | safe }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="row justify-content-center mt-5 mb-5 pb-4">
+                    <div class="col-lg-7 mt-4" data-aos="fade-in" data-bs-delay="300">
+                        <div class="questions__block">
+                            {% for question in questions %}
+                                <div class="accordion-item">
+                                    <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#q_{{ question.id }}">
+                                        {{ question.title }}
+                                        <picture>
+                                            <img src="{% static 'img/arow.svg' %}" alt="">
+                                        </picture>
+                                    </button>
+                                    <div id="q_{{ question.id }}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            {{ question.text | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center advices__block mb-5">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        {{ page.text_3 | safe }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.type == 'materials' %}
+            <div class="container">
+                <div class="row justify-content-center" data-aos="fade-in" data-aos-delay="600">
+                    <div class="col-lg-7 text-center materials__block">
+                        {{ page.text_1 | safe }}
                     </div>
                 </div>
             </div>
