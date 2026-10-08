@@ -1316,6 +1316,10 @@ label em {
     max-width: 80%;
 }
 
+.card__instruction img {
+    max-width: 75% !important;
+}
+
 .advices__block {
     padding-top: 3rem;
     background-color: #f0f0f0;
