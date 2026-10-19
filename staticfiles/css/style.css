@@ -825,6 +825,10 @@ footer .active a {
     color: var(--green_2);
 }
 
+.questions__block ul {
+    list-style: disc;
+}
+
 .contacts__block ul {
     list-style: none;
     display: flex;  

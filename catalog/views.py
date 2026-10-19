@@ -49,6 +49,7 @@ class ProductView(View):
         context = {
             "product": product,
             "benefits": Benefit.objects.all(),
+            "products": Product.objects.exclude(slug=product.slug).order_by('order'),
         }
 
         return render(request, template_name='product.html', context=context)
