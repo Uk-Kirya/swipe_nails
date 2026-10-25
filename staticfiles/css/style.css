@@ -174,6 +174,20 @@ main {
     left: 0;
 }
 
+.product__gallery .owl-nav button {
+    margin-top: 720px !important;
+}
+
+.product__gallery .item {
+    padding: 0 2px !important;
+}
+
+.product__gallery .item picture {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    left: 1px;
+}
+
 .slider p {
     color: #fff;
     font-size: .9rem;
@@ -1376,6 +1390,11 @@ label em {
     margin-top: 2rem !important;
 }
 
+.fancybox__thumbs,
+.fancybox__counter {
+    display: none;
+}
+
 @media (min-width: 1440px) {
 
     .container,
@@ -1578,5 +1597,14 @@ label em {
         max-width: 80%;
         text-align: center;
         margin-left: 10%;
+    }
+
+    .product__gallery,
+    .product__gallery .item {
+        height: 500px;
+    }
+
+    .product__gallery .owl-nav button {
+        margin-top: 500px !important;
     }
 }

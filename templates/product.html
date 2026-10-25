@@ -21,24 +21,17 @@
         <div class="container inner__header">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="ratio ratio-3x4 product__photo" data-aos="fade-in">
-                        <div>
+                    <div class="owl-theme owl-carousel slider product__gallery">
+                        <div class="item">
                             <picture data-fancybox="photo" data-src="{{ product.cover_1.url }}">
                                 <img src="{{ product.cover_1.url }}" alt="">
                             </picture>
                         </div>
-                    </div>
-                    <div class="product__photo mini__photos" data-aos="fade-in" data-aos-delay="200">
-
-                        <!-- Мини фотографии ДОРАБОТАТЬ -->
-                        <div class="ratio ratio-1x1">
-                            <div>
-                                <picture data-fancybox="photo" data-src="{{ product.cover_2.url }}">
-                                    <img src="{{ product.cover_2.url }}" alt="">
-                                </picture>
-                            </div>
+                        <div class="item">
+                            <picture data-fancybox="photo" data-src="{{ product.cover_2.url }}">
+                                <img src="{{ product.cover_2.url }}" alt="">
+                            </picture>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-6 ps-lg-5 mt-3 mt-lg-0">
@@ -71,6 +64,21 @@
                         </form>
                         <div class="product__full__description w-100" data-aos="fade-in" data-aos-delay="600">
                             {{ product.text_1 | safe }}
+
+                            {% if product.type == 'product' %}
+                                <div class="row mt-4 mb-4" data-aos-delay="650">
+                                    <div class="col-12 d-none d-md-block">
+                                        <picture>
+                                            <img src="{% static 'img/pd.png' %}" alt="" style="border-radius: 1rem">
+                                        </picture>
+                                    </div>
+                                    <div class="col-12 d-md-none">
+                                        <picture>
+                                            <img src="{% static 'img/pm.png' %}" alt="" style="border-radius: 1rem">
+                                        </picture>
+                                    </div>
+                                </div>
+                            {% endif %}
 
                             <div class="questions__block">
                                 <div class="accordion-item">
