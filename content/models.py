@@ -216,9 +216,9 @@ class Review(models.Model):
         ordering = '-published_at',
 
     name = models.CharField(max_length=255, blank=False, verbose_name='Имя')
-    photo_client = models.ImageField(upload_to=path_to_review_photos, blank=False, verbose_name='Фото клиента')
+    photo_client = models.ImageField(upload_to=path_to_review_photos, blank=True, verbose_name='Фото клиента')
     review = RichTextUploadingField(blank=False, verbose_name='Текст отзыва')
-    photo_review = models.ImageField(upload_to=path_to_review_photos, blank=False, verbose_name='Фото отзыва')
+    photo_review = models.ImageField(upload_to=path_to_review_photos, blank=True, verbose_name='Фото отзыва')
     published_at = models.DateTimeField(auto_now=True, blank=False, verbose_name='Дата публикации')
 
     def save(self, *args, **kwargs):
