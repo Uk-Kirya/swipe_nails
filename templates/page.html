@@ -96,13 +96,11 @@
                                 {% for review in reviews %}
                                     <div>
                                         <i>{{ review.published_at }}</i>
-                                        <picture>
-                                            {% if review.photo_client %}
+                                        {% if review.photo_client %}
+                                            <picture>
                                                 <img src="{{ review.photo_client.url }}" alt="">
-                                            {% else %}
-                                                <img src="{% static 'img/user.svg' %}" alt="">
-                                            {% endif %}
-                                        </picture>
+                                            </picture>
+                                        {% endif %}
                                         <b>{{ review.name }}</b>
                                         {{ review.review | safe }}
                                         {% if review.photo_review %}
