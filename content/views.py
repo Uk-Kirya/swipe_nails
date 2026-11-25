@@ -68,3 +68,15 @@ class ApplicationView(View):
 
 class ArticlePage(View):
     pass
+
+
+import requests
+from django.http import HttpResponse
+
+def check_server_ip(request):
+    try:
+        response = requests.get('https://api.ipify.org', timeout=5)
+        response.raise_for_status()
+        return HttpResponse(f"IP сервера: {response.text}")
+    except requests.RequestException as e:
+        return HttpResponse(f"Ошибка определения IP: {e}", status=500)
